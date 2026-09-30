@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEKROYSHOP - Gaming Cosmetic Store & Real 3D Arsenal</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,600;0,700;0,800;1,700&family=Kanit:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/shop.css">
+    <link rel="stylesheet" href="assets/css/fortnite-gg.css">
+</head>
+<body class="fn-body">
+    <!-- Top Navigation Header -->
+    <header class="fn-header">
+        <div class="fn-container fn-header-inner">
+            <div class="fn-brand-wrap">
+                <a href="index.html" class="fn-brand-logo">
+                    <span class="fn-brand-circle">GG</span>
+                    <span>DEKROY<span class="accent">SHOP</span></span>
+                </a>
+            </div>
+
+            <nav class="fn-nav">
+                <a href="index.html" class="fn-nav-link active">SHOP ARSENAL</a>
+                <a href="https://www.facebook.com/dekroyzz" target="_blank" rel="noopener noreferrer" class="fn-nav-link">FANPAGE</a>
+            </nav>
+
+            <div class="fn-header-actions">
+                <a href="https://www.facebook.com/dekroyzz" target="_blank" rel="noopener noreferrer" class="fn-btn-fanpage">
+                    <span>💬 ติดต่อแฟนเพจ FACEBOOK</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="fn-main">
+        <div class="fn-container">
+            <!-- Catalog Hero Title -->
+            <div class="fn-catalog-hero">
+                <h1 class="fn-hero-main-title">ITEM SHOP ARSENAL</h1>
+                <div class="fn-hero-subtitle">⚡ DEKROYSHOP EXCLUSIVE COSMETICS & REAL 3D WEAPONS</div>
+            </div>
+
+            <!-- Horizontal Category Navigation Bar -->
+            <div class="fn-category-bar-wrapper">
+                <div class="fn-category-bar">
+                    <button type="button" class="fn-cat-btn active" data-cat="hero">
+                        <span class="fn-cat-icon">🦸</span>
+                        <span class="fn-cat-label">HERO</span>
+                    </button>
+                    <button type="button" class="fn-cat-btn" data-cat="weapons">
+                        <span class="fn-cat-icon">⚔️</span>
+                        <span class="fn-cat-label">WEAPONS</span>
+                    </button>
+                    <button type="button" class="fn-cat-btn" data-cat="armor">
+                        <span class="fn-cat-icon">🛡️</span>
+                        <span class="fn-cat-label">ARMOR</span>
+                    </button>
+                    <button type="button" class="fn-cat-btn" data-cat="head">
+                        <span class="fn-cat-icon">🪖</span>
+                        <span class="fn-cat-label">HEAD</span>
+                    </button>
+                    <button type="button" class="fn-cat-btn" data-cat="backpack">
+                        <span class="fn-cat-icon">🎒</span>
+                        <span class="fn-cat-label">BACKPACK</span>
+                    </button>
+                    <button type="button" class="fn-cat-btn set-cat-btn" data-cat="set">
+                        <span class="fn-cat-icon">🎁</span>
+                        <span class="fn-cat-label">SET BUNDLE</span>
+                    </button>
+                    <button type="button" class="fn-cat-btn" data-cat="others">
+                        <span class="fn-cat-icon">📦</span>
+                        <span class="fn-cat-label">OTHERS</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Filter & Search Bar -->
+            <div class="fn-filter-bar">
+                <div class="fn-search-wrap">
+                    <span class="icon">🔍</span>
+                    <input type="text" id="searchInput" placeholder="พิมพ์ชื่อไอเทม หรือรหัสที่ต้องการค้นหา..." autocomplete="off">
+                </div>
+
+                <div class="fn-filter-pills">
+                    <button type="button" class="fn-pill-btn active" data-price="all">ทั้งหมด</button>
+                    <button type="button" class="fn-pill-btn fn-pill-sale" data-price="15">🔥 ลดราคา 15.-</button>
+                    <button type="button" class="fn-pill-btn" data-price="20">ปกติ 20.-</button>
+                </div>
+
+                <div class="fn-select-wrap">
+                    <select id="sortSelect" aria-label="Sort products">
+                        <option value="price_asc">เรียงตาม: ลดราคา 15.- ก่อน</option>
+                        <option value="price_desc">เรียงตาม: ราคา 20.- ก่อน</option>
+                        <option value="name_asc">เรียงตาม: ชื่อ A-Z</option>
+                        <option value="newest">เรียงตาม: มาใหม่ล่าสุด</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- 5 Columns Product Grid Showcase -->
+            <div class="fn-cosmetics-grid" id="productGrid">
+                <!-- Dynamically populated from assets/js/products-data.js -->
+            </div>
+
+            <!-- Pagination Container -->
+            <div id="paginationWrap" style="display:flex; justify-content:center; margin: 30px 0 60px;"></div>
+        </div>
+    </main>
+
+    <!-- Dedicated Full-Body Real 3D Model Viewer Modal (2-Column Showcase) -->
+    <div class="fn-real3d-backdrop" id="fnReal3dModal" onclick="if(event.target===this) closeFullBody3DModal()" role="dialog" aria-modal="true" aria-labelledby="real3dItemName">
+        <div class="fn-real3d-dialog">
+            <!-- Left Column: Item Information, Striking Price Box & Fanpage CTA -->
+            <div class="fn-real3d-sidebar" id="real3dSidebar">
+                <div class="fn-real3d-badges">
+                    <span class="fn-pill-badge fn-badge-gg">3D GG</span>
+                    <span class="fn-pill-badge fn-badge-wz" id="real3dCategoryBadge">HERO</span>
+                </div>
+
+                <div class="fn-real3d-title-group">
+                    <h2 class="fn-real3d-item-name" id="real3dItemName">CHARACTER NAME</h2>
+                    <div class="fn-real3d-item-sub" id="real3dItemSub">
+                        <span class="sub-type" id="real3dSubCategory">OUTFIT</span> &bull; <span class="sub-code" id="real3dItemCode">N/A</span>
+                    </div>
+                </div>
+
+                <!-- Price Box (ปกติ 20 บาท / พิเศษ 15 บาท) -->
+                <div class="fn-price-showcase-box" id="real3dPriceBox">
+                    <div class="fn-price-special-wrap">
+                        <span class="fn-price-special-label" id="real3dPriceLabel">พิเศษ</span>
+                        <span class="fn-price-special-amount" id="real3dPriceAmount">15</span>
+                        <span class="fn-price-special-currency">บาท</span>
+                    </div>
+                    <div class="fn-price-regular-wrap" id="real3dOldPriceWrap" style="display:none;">
+                        <span class="fn-price-regular-text" id="real3dOldPrice">ปกติ 20 บาท</span>
+                    </div>
+                    <span class="fn-price-discount-badge" id="real3dSaleBadge" style="display:none;">🔥 ลดราคา 15.-</span>
+                </div>
+
+                <div class="fn-stock-timer-pill">
+                    ⚡ IN STOCK • พร้อมส่งทันที
+                </div>
+
+                <!-- Primary CTA: Big Yellow Facebook Order Button -->
+                <div class="fn-primary-cta-wrap">
+                    <a href="https://www.facebook.com/dekroyzz" target="_blank" rel="noopener noreferrer" class="fn-btn-shop-fortnite" id="real3dFbBtn">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                        <span>💬 ทักสอบถาม / สั่งซื้อผ่าน FACEBOOK</span>
+                    </a>
+                    <span class="fn-cta-subtag">Official Fanpage &bull; แชทสั่งซื้อสะดวก ตอบไว 24 ชม.</span>
+                </div>
+
+                <!-- 1-Click Copy Slip for Chat Convenience -->
+                <div class="fn-modal-actions" style="margin-top:auto; padding-top:14px;">
+                    <button type="button" class="fn-btn-copy-slip" id="real3dCopyBtn" onclick="copyReal3dItemSlip()">
+                        📋 คัดลอกรหัส & ชื่อไอเทมสำหรับส่งแชท
+                    </button>
+                    <div id="real3dCopyNotice" style="display:none; font-size:11px; font-weight:800; color:#34d399; text-align:center; padding:6px 10px; margin-top:6px; background:rgba(16,185,129,0.15); border-radius:6px; border:1px solid rgba(16,185,129,0.3);">
+                        ✓ คัดลอกข้อความสำเร็จ! นำไปส่งในแชทแฟนเพจ Facebook ได้ทันที
+                    </div>
+                </div>
+
+                <div class="fn-real3d-mesh-stats" id="real3dStats">
+                    WEBGL 3D REALTIME MESH
+                </div>
+            </div>
+
+            <!-- Right Column: Interactive 3D WebGL Canvas Stage -->
+            <div class="fn-real3d-canvas-wrap">
+                <button type="button" class="fn-modal-close fn-real3d-close-btn" onclick="closeFullBody3DModal()" aria-label="Close 3D viewer">&times;</button>
+                <div id="real3dCanvasContainer" style="width:100%; height:100%;"></div>
+                <div class="fn-real3d-hint">🖱️ คลิกซ้ายลากเพื่อหมุน 360° | หมุนลูกกลิ้งเมาส์เพื่อซูม | คลิกขวาลากเพื่อเลื่อน</div>
+                
+                <!-- Bottom HUD Controls -->
+                <div class="fn-real3d-controls-hud">
+                    <button type="button" class="fn-hud-btn active" id="real3dBtnSpin" onclick="toggle3dAutoSpin()">🔄 AUTO-SPIN</button>
+                    <button type="button" class="fn-hud-btn" id="real3dBtnWireframe" onclick="toggle3dWireframe()">🕸️ WIREFRAME</button>
+                    <button type="button" class="fn-hud-btn" onclick="zoom3dIn()">🔍+ ZOOM IN</button>
+                    <button type="button" class="fn-hud-btn" onclick="zoom3dOut()">🔍- ZOOM OUT</button>
+                    <button type="button" class="fn-hud-btn" onclick="reset3dCamera()">↩️ RESET</button>
+                </div>
+
+                <div id="real3dSpinner" style="display:none; position:absolute; inset:0; background:rgba(12,14,20,0.85); align-items:center; justify-content:center; color:var(--fn-cyan); font-weight:800; font-size:14px; gap:10px; z-index:20;">
+                    ⏳ กำลังเรนเดอร์โมเดล 3D...
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Master Footer -->
+    <footer class="fn-footer">
+        <div class="fn-container">
+            <div class="fn-footer-inner">
+                <div style="display:flex; align-items:center; gap:12px;">
+                    <a href="index.html" class="fn-brand-logo" style="font-size:18px;">
+                        <span class="fn-brand-circle" style="width:28px;height:28px;font-size:13px;">GG</span>
+                        <span>DEKROY<span class="accent">SHOP</span></span>
+                    </a>
+                    <span style="color:var(--fn-text-muted); font-size:12px;">&bull;</span>
+                    <span style="color:var(--fn-text-body); font-size:12px;">
+                        DEKROYSHOP Official Items Store
+                    </span>
+                </div>
+
+                <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+                    <a href="https://www.facebook.com/dekroyzz" target="_blank" rel="noopener noreferrer" style="color:var(--fn-cyan); font-size:12px; font-weight:800;">
+                        FACEBOOK FANPAGE &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <div style="margin-top:20px; padding-top:16px; border-top:1px solid var(--fn-border); display:flex; justify-content:space-between; align-items:center; font-size:11px; color:var(--fn-text-muted); flex-wrap:wrap; gap:10px;">
+                <div>
+                    &copy; 2026 <strong>DEKROYSHOP</strong>. All rights reserved. ทุกอย่าง 20 บาท | ลดราคา 15 บาท
+                </div>
+                <div style="display:flex; gap:12px;">
+                    <span>⚡ GITHUB PAGES READY</span>
+                    <span>🔒 100% VERIFIED STORE</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts (3D Engine + Data Store + Static App) -->
+    <script src="assets/js/three.min.js"></script>
+    <script src="assets/js/OrbitControls.js"></script>
+    <script src="assets/js/model-index.js"></script>
+    <script src="assets/js/real-3d-viewer.js"></script>
+    <script src="assets/js/products-data.js"></script>
+    <script src="assets/js/static-app.js"></script>
+</body>
+</html>
