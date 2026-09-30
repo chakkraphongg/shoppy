@@ -1,0 +1,3176 @@
+/**
+
+ * DEKROYSHOP - Fortnite.GG Inspired Cosmetic Store Design Language
+
+ * Dark Gaming Aesthetic, Category Icon Pills, Dense Cosmetic Cards, Rarity Gradients
+
+ */
+
+
+
+:root {
+
+    /* 1. Core Dark Surfaces */
+
+    --fn-bg: #141518;
+
+    --fn-bg-secondary: #1a1c20;
+
+    --fn-surface: #202227;
+
+    --fn-surface-hover: #292d34;
+
+    --fn-card-bg: #252830;
+
+    --fn-border: #31353f;
+
+    --fn-border-subtle: #252830;
+
+
+
+    /* 2. Brand Accents */
+
+    --fn-yellow: #f7b928;
+
+    --fn-yellow-hover: #e5a71a;
+
+    --fn-cyan: #00e5ff;
+
+    --fn-cyan-glow: rgba(0, 229, 255, 0.35);
+
+    --fn-green: #10b981;
+
+    --fn-red: #ef4444;
+
+    --fn-fb-blue: #1877f2;
+
+    --fn-fb-hover: #0e65d9;
+
+
+
+    /* 3. Typography */
+
+    --fn-text-white: #ffffff;
+
+    --fn-text-body: #9da3af;
+
+    --fn-text-muted: #646b79;
+
+    --fn-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+    --fn-font-display: "Impact", "Arial Black", "Inter", sans-serif;
+
+
+
+    /* 4. Geometry */
+
+    --fn-radius-sm: 6px;
+
+    --fn-radius-md: 10px;
+
+    --fn-radius-lg: 14px;
+
+    --fn-header-height: 64px;
+
+    --fn-container-max: 1440px;
+
+
+
+    /* 5. Rarity Gradients */
+
+    --rarity-gold: radial-gradient(circle at 50% 25%, #f59e0b 0%, #b45309 60%, #451a03 100%);
+
+    --rarity-purple: radial-gradient(circle at 50% 25%, #a855f7 0%, #7e22ce 60%, #3b0764 100%);
+
+    --rarity-blue: radial-gradient(circle at 50% 25%, #06b6d4 0%, #0369a1 60%, #082f49 100%);
+
+    --rarity-green: radial-gradient(circle at 50% 25%, #10b981 0%, #047857 60%, #022c22 100%);
+
+    --rarity-red: radial-gradient(circle at 50% 25%, #f43f5e 0%, #be123c 60%, #4c0519 100%);
+
+    --rarity-dark: radial-gradient(circle at 50% 25%, #475569 0%, #1e293b 60%, #0f172a 100%);
+
+}
+
+
+
+/* ==========================================================
+
+   RESET & FOUNDATION
+
+   ========================================================== */
+
+*, *::before, *::after {
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+
+html {
+
+    scroll-behavior: smooth;
+
+    font-size: 15px;
+
+    background-color: var(--fn-bg);
+
+    color: var(--fn-text-body);
+
+}
+
+
+
+body {
+
+    font-family: var(--fn-font);
+
+    background-color: var(--fn-bg);
+
+    color: var(--fn-text-body);
+
+    line-height: 1.5;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow-x: hidden;
+
+    -webkit-font-smoothing: antialiased;
+
+}
+
+
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+    transition: color 0.15s ease;
+
+}
+
+
+
+a:hover {
+
+    color: var(--fn-yellow);
+
+}
+
+
+
+img {
+
+    max-width: 100%;
+
+    height: auto;
+
+    display: block;
+
+}
+
+
+
+button, input, select {
+
+    font-family: inherit;
+
+}
+
+
+
+.fn-container {
+
+    width: 100%;
+
+    max-width: var(--fn-container-max);
+
+    margin: 0 auto;
+
+    padding: 0 24px;
+
+}
+
+
+
+/* ==========================================================
+
+   HEADER (FORTNITE.GG STYLE TOP BAR)
+
+   ========================================================== */
+
+.fn-header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    height: var(--fn-header-height);
+
+    background: rgba(20, 21, 24, 0.95);
+
+    backdrop-filter: blur(12px);
+
+    -webkit-backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid var(--fn-border);
+
+}
+
+
+
+.fn-header-inner {
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+}
+
+
+
+.fn-brand-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.01em;
+
+    color: #ffffff;
+
+    text-transform: uppercase;
+
+}
+
+
+
+.fn-brand-circle {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 32px;
+
+    height: 32px;
+
+    background: var(--fn-yellow);
+
+    color: #141518;
+
+    font-size: 15px;
+
+    font-weight: 900;
+
+    border-radius: 50%;
+
+}
+
+
+
+.fn-brand-logo span.accent {
+
+    color: var(--fn-yellow);
+
+}
+
+
+
+.fn-nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+}
+
+
+
+.fn-nav-link {
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+
+    text-transform: uppercase;
+
+    color: #a0a6b5;
+
+    padding: 6px 0;
+
+    position: relative;
+
+    transition: color 0.15s ease;
+
+}
+
+
+
+.fn-nav-link:hover, .fn-nav-link.active {
+
+    color: #ffffff;
+
+}
+
+
+
+.fn-nav-link.active::after {
+
+    content: '';
+
+    position: absolute;
+
+    bottom: -16px;
+
+    left: 0;
+
+    right: 0;
+
+    height: 3px;
+
+    background: var(--fn-yellow);
+
+}
+
+
+
+.fn-header-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+
+.fn-btn-fanpage {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 16px;
+
+    background: var(--fn-fb-blue);
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    border-radius: var(--fn-radius-md);
+
+    transition: background 0.15s ease, transform 0.15s ease;
+
+}
+
+
+
+.fn-btn-fanpage:hover {
+
+    background: var(--fn-fb-hover);
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+
+}
+
+
+
+.fn-cart-pill {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 8px 14px;
+
+    background: var(--fn-surface);
+
+    border: 1px solid var(--fn-border);
+
+    border-radius: var(--fn-radius-md);
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+
+.fn-cart-pill:hover {
+
+    background: var(--fn-surface-hover);
+
+    border-color: var(--fn-yellow);
+
+    color: var(--fn-yellow);
+
+}
+
+
+
+.fn-cart-count {
+
+    background: var(--fn-yellow);
+
+    color: #141518;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    padding: 1px 6px;
+
+    border-radius: 10px;
+
+}
+
+
+
+/* ==========================================================
+
+   PAGE HERO TITLE & COUNTER (FORTNITE.GG STYLE)
+
+   ========================================================== */
+
+.fn-catalog-hero {
+
+    text-align: center;
+
+    padding: 32px 0 20px;
+
+}
+
+
+
+.fn-hero-main-title {
+
+    font-family: var(--fn-font-display);
+
+    font-size: clamp(34px, 4.5vw, 48px);
+
+    letter-spacing: 0.02em;
+
+    text-transform: uppercase;
+
+    color: #ffffff;
+
+    line-height: 1;
+
+    margin-bottom: 6px;
+
+}
+
+
+
+.fn-hero-subtitle {
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+
+    color: var(--fn-cyan);
+
+}
+
+
+
+/* ==========================================================
+
+   HORIZONTAL CATEGORY ICONS BAR (THE FORTNITE.GG ROW)
+
+   ========================================================== */
+
+.fn-category-bar-wrapper {
+
+    margin: 16px 0 24px;
+
+    overflow-x: auto;
+
+    scrollbar-width: thin;
+
+    padding-bottom: 4px;
+
+}
+
+
+
+.fn-category-bar {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    min-width: max-content;
+
+    padding: 4px 0;
+
+}
+
+
+
+.fn-cat-btn {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    min-width: 90px;
+
+    height: 72px;
+
+    padding: 8px 12px;
+
+    background: var(--fn-surface);
+
+    border: 1px solid var(--fn-border);
+
+    border-radius: var(--fn-radius-md);
+
+    color: #a0a6b5;
+
+    cursor: pointer;
+
+    transition: all 0.15s ease;
+
+    user-select: none;
+
+}
+
+
+
+.fn-cat-btn .fn-cat-icon {
+
+    font-size: 20px;
+
+    line-height: 1;
+
+}
+
+
+
+.fn-cat-btn .fn-cat-label {
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.06em;
+
+    text-transform: uppercase;
+
+}
+
+
+
+.fn-cat-btn:hover {
+
+    background: var(--fn-surface-hover);
+
+    color: #ffffff;
+
+    border-color: #4a505e;
+
+}
+
+
+
+.fn-cat-btn.active {
+
+    background: #ffffff;
+
+    color: #141518;
+
+    border-color: #ffffff;
+
+    box-shadow: 0 4px 16px rgba(255, 255, 255, 0.2);
+
+}
+
+
+
+.fn-cat-btn.active .fn-cat-label {
+
+    color: #141518;
+
+}
+
+
+
+/* Special Set button highlight */
+
+.fn-cat-btn.set-cat-btn {
+
+    border-color: #eab308;
+
+}
+
+
+
+.fn-cat-btn.set-cat-btn:not(.active) {
+
+    background: rgba(234, 179, 8, 0.12);
+
+    color: #facc15;
+
+}
+
+
+
+/* ==========================================================
+
+   SEARCH & SECONDARY FILTER BAR
+
+   ========================================================== */
+
+.fn-filter-bar {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    background: var(--fn-bg-secondary);
+
+    border: 1px solid var(--fn-border);
+
+    border-radius: var(--fn-radius-lg);
+
+    padding: 10px 16px;
+
+    margin-bottom: 24px;
+
+    flex-wrap: wrap;
+
+}
+
+
+
+.fn-search-wrap {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background: var(--fn-surface);
+
+    border: 1px solid var(--fn-border);
+
+    border-radius: var(--fn-radius-md);
+
+    padding: 8px 14px;
+
+    flex: 1;
+
+    min-width: 260px;
+
+    max-width: 440px;
+
+}
+
+
+
+.fn-search-wrap input {
+
+    background: transparent;
+
+    border: none;
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    width: 100%;
+
+}
+
+
+
+.fn-search-wrap input:focus {
+
+    outline: none;
+
+}
+
+
+
+.fn-search-wrap input::placeholder {
+
+    color: var(--fn-text-muted);
+
+}
+
+
+
+.fn-filter-pills {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+}
+
+
+
+.fn-pill-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 8px 14px;
+
+    background: var(--fn-surface);
+
+    border: 1px solid var(--fn-border);
+
+    border-radius: var(--fn-radius-md);
+
+    color: #c4c9d4;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.15s ease;
+
+}
+
+
+
+.fn-pill-btn:hover {
+
+    background: var(--fn-surface-hover);
+
+    color: #ffffff;
+
+}
+
+
+
+.fn-pill-btn.active {
+
+    background: var(--fn-yellow);
+
+    color: #141518;
+
+    border-color: var(--fn-yellow);
+
+}
+
+
+
+.fn-pill-sale {
+
+    background: rgba(16, 185, 129, 0.15);
+
+    border-color: rgba(16, 185, 129, 0.35);
+
+    color: #34d399;
+
+}
+
+
+
+.fn-pill-sale:hover, .fn-pill-sale.active {
+
+    background: #10b981;
+
+    color: #ffffff;
+
+    border-color: #10b981;
+
+}
+
+
+
+.fn-select-wrap select {
+
+    background: var(--fn-surface);
+
+    border: 1px solid var(--fn-border);
+
+    border-radius: var(--fn-radius-md);
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    padding: 8px 12px;
+
+    cursor: pointer;
+
+}
+
+
+
+.fn-select-wrap select:focus {
+
+    outline: none;
+
+    border-color: var(--fn-yellow);
+
+}
+
+
+
+/* ==========================================================
+   COSMETICS GRID (5 COLUMNS RESPONSIVE GAMING ARSENAL)
+   ========================================================== */
+.fn-cosmetics-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+    margin-bottom: 50px;
+}
+
+@media (max-width: 1440px) {
+    .fn-cosmetics-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 14px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .fn-cosmetics-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+    }
+}
+
+@media (max-width: 960px) {
+    .fn-cosmetics-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+}
+
+@media (max-width: 640px) {
+    .fn-cosmetics-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+}
+
+/* ==========================================================
+   THE MODERN NAVY BLUE COSMETIC CARD
+   ========================================================== */
+.fn-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #0b1329;
+    border: 1px solid rgba(59, 130, 246, 0.22);
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease, border-color 0.22s ease;
+    user-select: none;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+.fn-card:hover {
+    transform: translateY(-5px);
+    border-color: #38bdf8;
+    box-shadow: 0 14px 34px rgba(2, 132, 199, 0.3);
+    z-index: 5;
+}
+
+/* Upper Visual Box with Dark Blue Radial Gradient */
+/* Visual Container (Uniform Clean Dark Blue Gaming Studio Background) */
+.fn-card-visual {
+    position: relative;
+    width: 100%;
+    height: 215px;
+    background: radial-gradient(circle at 50% 35%, #172554 0%, #0b1329 65%, #050a17 100%) !important;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 6px;
+}
+
+.fn-card-visual img.fn-card-img {
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    margin: auto;
+    transform: scale(1.05);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.6));
+}
+
+.fn-card:hover .fn-card-visual img.fn-card-img {
+    transform: scale(1.16);
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.85));
+}
+
+/* Floating Badges Top-Left */
+.fn-card-top-badges {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 4;
+    pointer-events: none;
+}
+
+.fn-badge-stock {
+    background: #ffffff;
+    color: #059669;
+    font-size: 11px;
+    font-weight: 800;
+    border-radius: 20px;
+    padding: 2px 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+    width: fit-content;
+    line-height: 1.2;
+}
+
+.stock-dot {
+    color: #10b981;
+    font-size: 11px;
+}
+
+.fn-badge-sale {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: #ffffff;
+    font-size: 10.5px;
+    font-weight: 900;
+    border-radius: 20px;
+    padding: 2px 8px;
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.5);
+    width: fit-content;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+/* 3D Rotate Button Bottom-Right */
+.fn-badge-3d {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(12, 74, 110, 0.88);
+    border: 1px solid #0284c7;
+    color: #38bdf8;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    backdrop-filter: blur(4px);
+    z-index: 4;
+    transition: all 0.15s ease;
+}
+
+.fn-badge-3d:hover {
+    background: #0284c7;
+    color: #ffffff;
+    transform: scale(1.05);
+    box-shadow: 0 2px 10px rgba(2, 132, 199, 0.5);
+}
+
+/* Card Info Body (Lower Half) */
+.fn-card-body {
+    padding: 12px 14px 14px;
+    background: #0b1329;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.fn-card-meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.fn-card-subtag {
+    font-size: 11px;
+    font-weight: 700;
+    color: #94a3b8;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.fn-card-item-id {
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748b;
+    flex-shrink: 0;
+}
+
+.fn-card-name {
+    font-size: 14px;
+    font-weight: 800;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 0 8px;
+    line-height: 1.3;
+}
+
+.fn-card-pricing {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.fn-price-current {
+    font-size: 20px;
+    font-weight: 900;
+    color: #ffffff;
+    line-height: 1;
+}
+
+.fn-price-current.sale {
+    color: #ef4444;
+}
+
+.fn-price-original {
+    font-size: 13px;
+    font-weight: 700;
+    color: #64748b;
+    text-decoration: line-through;
+    text-decoration-color: #ef4444;
+}
+
+/* Action Buttons Grid */
+.fn-card-actions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.fn-btn-card-inspect {
+    background: #1e293b;
+    color: #e2e8f0;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    padding: 7px 6px;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.15s ease;
+}
+
+.fn-btn-card-inspect:hover {
+    background: #334155;
+    color: #ffffff;
+    border-color: #475569;
+}
+
+.fn-btn-card-order {
+    background: #0284c7;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 7px 8px;
+    font-size: 12px;
+    font-weight: 900;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.4);
+    transition: all 0.15s ease;
+}
+
+.fn-btn-card-order:hover {
+    background: #0369a1;
+    color: #ffffff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.6);
+}
+
+/* ==========================================================
+
+   QUICK INSPECTION MODAL (FORTNITE.GG ITEM PREVIEW)
+
+   ========================================================== */
+
+.fn-modal-backdrop {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100vw;
+
+    height: 100vh;
+
+    background: rgba(10, 11, 14, 0.88);
+
+    backdrop-filter: blur(8px);
+
+    -webkit-backdrop-filter: blur(8px);
+
+    z-index: 99999;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+
+}
+
+
+
+.fn-modal-backdrop.show {
+
+    display: flex !important;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+
+    pointer-events: auto !important;
+
+}
+
+
+
+.fn-modal-dialog {
+
+    background: var(--fn-bg-secondary);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 16px;
+
+    width: 100%;
+
+    max-width: 980px;
+
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.9), 0 0 80px rgba(0, 200, 255, 0.12);
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: grid;
+
+    grid-template-columns: 1.15fr 1fr;
+
+    transform: scale(0.95);
+
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+}
+
+
+
+.fn-modal-backdrop.show .fn-modal-dialog {
+
+    transform: scale(1);
+
+}
+
+
+
+/* ==========================================================
+
+   LEFT: 3D HOLOGRAPHIC STAGE SHOWCASE
+
+   ========================================================== */
+
+.fn-modal-stage {
+
+    padding: 30px 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    min-height: 520px;
+
+    perspective: 1200px;
+
+    overflow: hidden;
+
+    background: radial-gradient(circle at 50% 45%, #1e3a8a 0%, #0f172a 65%, #080d1a 100%);
+
+    user-select: none;
+
+}
+
+
+
+/* Category-specific Rarity Backgrounds */
+
+.fn-modal-stage.rarity-weapons {
+
+    background: radial-gradient(circle at 50% 45%, #0284c7 0%, #0369a1 40%, #081a2e 100%);
+
+}
+
+.fn-modal-stage.rarity-armor {
+
+    background: radial-gradient(circle at 50% 45%, #e11d48 0%, #9f1239 40%, #1f0810 100%);
+
+}
+
+.fn-modal-stage.rarity-head {
+
+    background: radial-gradient(circle at 50% 45%, #9333ea 0%, #6b21a8 40%, #1a0826 100%);
+
+}
+
+.fn-modal-stage.rarity-hero {
+
+    background: radial-gradient(circle at 50% 45%, #0284c7 0%, #1e40af 50%, #0b1329 100%);
+
+}
+
+.fn-modal-stage.rarity-backpack {
+
+    background: radial-gradient(circle at 50% 45%, #059669 0%, #065f46 40%, #051a14 100%);
+
+}
+
+.fn-modal-stage.rarity-others {
+
+    background: radial-gradient(circle at 50% 45%, #475569 0%, #334155 40%, #0f172a 100%);
+
+}
+
+
+
+/* 3D Atmosphere Ambient Glow */
+
+.fn-stage-glow {
+
+    position: absolute;
+
+    width: 320px;
+
+    height: 320px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, transparent 70%);
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    filter: blur(30px);
+
+}
+
+
+
+/* 3D Holographic Pedestal at Bottom */
+
+.fn-stage-pedestal {
+
+    position: absolute;
+
+    bottom: 40px;
+
+    width: 220px;
+
+    height: 55px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 50%, transparent 75%);
+
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.4), inset 0 0 15px rgba(255, 255, 255, 0.3);
+
+    transform: rotateX(65deg);
+
+    pointer-events: none;
+
+    z-index: 1;
+
+}
+
+
+
+/* 3D Perspective Card Wrapper */
+
+.fn-3d-wrapper {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    height: 100%;
+
+    transform-style: preserve-3d;
+
+    transition: transform 0.12s ease-out;
+
+}
+
+
+
+.fn-3d-model {
+
+    max-width: 88%;
+
+    max-height: 380px;
+
+    object-fit: contain;
+
+    filter: drop-shadow(0 25px 35px rgba(0, 0, 0, 0.8));
+
+    transform-style: preserve-3d;
+
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), filter 0.25s ease;
+
+    cursor: grab;
+
+}
+
+
+
+.fn-3d-model:active {
+
+    cursor: grabbing;
+
+}
+
+
+
+/* Auto-Rotate 3D Animation */
+
+.fn-3d-wrapper.auto-spin .fn-3d-model {
+
+    animation: fn3dFloatSpin 6s ease-in-out infinite;
+
+}
+
+
+
+@keyframes fn3dFloatSpin {
+
+    0% { transform: translateY(0px) rotateY(-18deg) scale(1); }
+
+    50% { transform: translateY(-16px) rotateY(18deg) scale(1.04); }
+
+    100% { transform: translateY(0px) rotateY(-18deg) scale(1); }
+
+}
+
+
+
+/* Zoomed state */
+
+.fn-3d-wrapper.zoomed .fn-3d-model {
+
+    transform: scale(1.38) translateZ(50px);
+
+}
+
+
+
+/* Holographic Sheen */
+
+.fn-3d-sheen {
+
+    position: absolute;
+
+    top: 0; left: 0; right: 0; bottom: 0;
+
+    pointer-events: none;
+
+    z-index: 3;
+
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.12) 50%, rgba(255, 255, 255, 0) 70%);
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+
+}
+
+.fn-modal-stage:hover .fn-3d-sheen {
+
+    opacity: 1;
+
+}
+
+
+
+/* 3D Viewport Controls Pill */
+
+.fn-stage-controls {
+
+    position: absolute;
+
+    bottom: 14px;
+
+    left: 14px;
+
+    display: flex;
+
+    gap: 6px;
+
+    z-index: 10;
+
+}
+
+
+
+.fn-stage-btn {
+
+    background: rgba(15, 23, 42, 0.85);
+
+    backdrop-filter: blur(8px);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    color: #e2e8f0;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.05em;
+
+    padding: 5px 9px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+
+    transition: all 0.15s ease;
+
+}
+
+
+
+.fn-stage-btn:hover,
+
+.fn-stage-btn.active {
+
+    background: var(--fn-cyan);
+
+    color: #0b1329;
+
+    border-color: var(--fn-cyan);
+
+    transform: translateY(-1px);
+
+}
+
+
+
+/* Watermark Branding */
+
+.fn-stage-brand {
+
+    position: absolute;
+
+    bottom: 14px;
+
+    right: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    letter-spacing: 0.06em;
+
+    z-index: 5;
+
+    pointer-events: none;
+
+}
+
+
+
+/* ==========================================================
+
+   RIGHT: METADATA, REACTION BAR & ACTIONS (FORTNITE.GG)
+
+   ========================================================== */
+
+.fn-modal-details {
+
+    padding: 24px 28px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    background: #14161a;
+
+    overflow-y: auto;
+
+    max-height: 90vh;
+
+}
+
+
+
+/* Top Badges & Close */
+
+.fn-modal-top-bar {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 2px;
+
+}
+
+
+
+.fn-modal-brand-badges {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+}
+
+
+
+.fn-pill-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 24px;
+
+    height: 24px;
+
+    border-radius: 50%;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: -0.02em;
+
+}
+
+
+
+.fn-badge-gg {
+
+    background: #0284c7;
+
+    color: #ffffff;
+
+}
+
+
+
+.fn-badge-wz {
+
+    background: #e11d48;
+
+    color: #ffffff;
+
+}
+
+
+
+.fn-modal-close {
+
+    width: 28px;
+
+    height: 28px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    color: #ffffff;
+
+    border: none;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    transition: all 0.15s ease;
+
+}
+
+
+
+.fn-modal-close:hover {
+
+    background: rgba(255, 255, 255, 0.25);
+
+    transform: rotate(90deg);
+
+}
+
+
+
+/* Title & Sub Row */
+
+.fn-modal-header-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+
+.fn-modal-title {
+
+    font-size: clamp(22px, 2.6vw, 28px);
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    color: #ffffff;
+
+    line-height: 1.15;
+
+    letter-spacing: -0.01em;
+
+    margin: 0;
+
+}
+
+
+
+.fn-modal-sub-row {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 4px 0 6px;
+
+}
+
+
+
+.fn-rarity-pill {
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    padding: 3px 8px;
+
+    border-radius: 4px;
+
+    background: #9333ea;
+
+    color: #ffffff;
+
+    letter-spacing: 0.08em;
+
+}
+
+
+
+.fn-type-label {
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    color: #94a3b8;
+
+    letter-spacing: 0.08em;
+
+}
+
+
+
+/* Price Row */
+
+.fn-price-display-row {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 4px 0;
+
+}
+
+
+
+.fn-vbucks-icon {
+
+    font-size: 18px;
+
+}
+
+
+
+.fn-display-price {
+
+    font-size: 24px;
+
+    font-weight: 900;
+
+    color: #ffffff;
+
+}
+
+
+
+.fn-display-price.sale {
+
+    color: #34d399;
+
+}
+
+
+
+.fn-display-old-price {
+
+    font-size: 13px;
+
+    color: #64748b;
+
+    text-decoration: line-through;
+
+}
+
+
+
+.fn-sale-pill {
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    background: rgba(239, 68, 68, 0.2);
+
+    color: #f87171;
+
+    border: 1px solid rgba(239, 68, 68, 0.4);
+
+    padding: 2px 7px;
+
+    border-radius: 4px;
+
+}
+
+
+
+/* Timer / Stock Pill */
+
+.fn-stock-timer-pill {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    background: rgba(56, 189, 248, 0.1);
+
+    border: 1px solid rgba(56, 189, 248, 0.25);
+
+    color: #38bdf8;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    padding: 4px 10px;
+
+    border-radius: 20px;
+
+    width: fit-content;
+
+    margin-bottom: 6px;
+
+}
+
+
+
+/* Primary CTA: Yellow Fortnite Button */
+
+.fn-primary-cta-wrap {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    margin: 4px 0;
+
+}
+
+
+
+.fn-btn-shop-fortnite {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 15px 16px;
+    background: linear-gradient(135deg, #facc15 0%, #eab308 100%);
+    color: #0b111e;
+    font-size: 13.5px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 1px solid #fef08a;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 18px rgba(250, 204, 21, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    text-align: center;
+}
+
+.fn-btn-shop-fortnite:hover {
+    background: linear-gradient(135deg, #fde047 0%, #facc15 100%);
+    color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(250, 204, 21, 0.65), 0 0 15px rgba(250, 204, 21, 0.4);
+}
+
+.fn-cta-subtag {
+    font-size: 11px;
+    font-weight: 700;
+    color: #94a3b8;
+    text-align: center;
+    letter-spacing: 0.02em;
+    margin-top: 4px;
+}
+
+
+
+/* Flavor Quote */
+
+.fn-flavor-quote {
+
+    font-size: 12px;
+
+    font-style: italic;
+
+    color: #94a3b8;
+
+    line-height: 1.5;
+
+    padding-left: 10px;
+
+    border-left: 2px solid var(--fn-cyan);
+
+    margin: 4px 0;
+
+}
+
+
+
+/* Metadata Box (No Character Combat Stats) */
+
+.fn-metadata-box {
+
+    background: rgba(0, 0, 0, 0.35);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 8px;
+
+    padding: 10px 14px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 6px 12px;
+
+    font-size: 11px;
+
+}
+
+
+
+.fn-meta-row {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1px;
+
+}
+
+
+
+.fn-meta-label {
+
+    color: #64748b;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    font-size: 9px;
+
+    letter-spacing: 0.05em;
+
+}
+
+
+
+.fn-meta-value {
+
+    color: #ffffff;
+
+    font-weight: 800;
+
+}
+
+
+
+.fn-meta-value.highlight {
+
+    color: #38bdf8;
+
+}
+
+
+
+.fn-meta-value.code {
+
+    font-family: monospace;
+
+    color: #facc15;
+
+}
+
+
+
+.fn-meta-value.in-stock {
+
+    color: #34d399;
+
+}
+
+
+
+/* Fortnite.GG Signature Emoji Reaction Bar (Image 2) */
+
+.fn-reaction-bar {
+
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 6px;
+
+    margin: 2px 0;
+
+}
+
+
+
+.fn-react-btn {
+
+    background: #1c1f26;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 8px;
+
+    padding: 6px 2px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 2px;
+
+    cursor: pointer;
+
+    transition: all 0.15s ease;
+
+}
+
+
+
+.fn-react-btn:hover {
+
+    background: #262b35;
+
+    border-color: rgba(255, 255, 255, 0.2);
+
+    transform: translateY(-2px);
+
+}
+
+
+
+.fn-react-btn.reacted {
+
+    border-color: #facc15;
+
+    background: rgba(250, 204, 21, 0.15);
+
+}
+
+
+
+.fn-react-emoji {
+
+    font-size: 15px;
+
+    transition: transform 0.15s ease;
+
+}
+
+
+
+.fn-react-btn:active .fn-react-emoji {
+
+    transform: scale(1.3);
+
+}
+
+
+
+.fn-react-count {
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    color: #cbd5e1;
+
+}
+
+
+
+/* Action Buttons */
+
+.fn-modal-actions {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+
+.fn-btn-copy-slip {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 9px;
+
+    background: #1c1f26;
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    border-radius: 6px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    cursor: pointer;
+
+    transition: all 0.15s ease;
+
+}
+
+
+
+.fn-btn-copy-slip:hover {
+
+    background: #262b35;
+
+    border-color: var(--fn-yellow);
+
+    color: var(--fn-yellow);
+
+}
+
+
+
+.fn-btn-buynow {
+
+    background: var(--fn-yellow) !important;
+
+    color: #0b1329 !important;
+
+    font-weight: 800 !important;
+
+}
+
+
+
+@media (max-width: 768px) {
+
+    .fn-modal-dialog {
+
+        grid-template-columns: 1fr;
+
+        max-height: 92vh;
+
+    }
+
+    .fn-modal-stage {
+
+        min-height: 280px;
+
+        padding: 20px;
+
+    }
+
+    .fn-3d-model {
+
+        max-height: 220px;
+
+    }
+
+}
+
+
+
+/* ==========================================================
+
+   PAGINATION (FORTNITE.GG DARK PILL BUTTONS)
+
+   ========================================================== */
+
+.fn-pagination {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 6px;
+
+    margin: 40px 0 70px;
+
+    flex-wrap: wrap;
+
+}
+
+
+
+.fn-page-link {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 38px;
+
+    height: 38px;
+
+    padding: 0 12px;
+
+    background: var(--fn-surface);
+
+    border: 1px solid var(--fn-border);
+
+    border-radius: var(--fn-radius-md);
+
+    color: #c4c9d4;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    transition: all 0.15s ease;
+
+}
+
+
+
+.fn-page-link:hover {
+
+    background: var(--fn-surface-hover);
+
+    color: #ffffff;
+
+    border-color: #4a505e;
+
+}
+
+
+
+.fn-page-link.active {
+
+    background: var(--fn-yellow);
+
+    color: #141518;
+
+    border-color: var(--fn-yellow);
+
+    font-weight: 900;
+
+}
+
+
+
+/* ==========================================================
+
+   FOOTER (DARK GAMING FOOTER)
+
+   ========================================================== */
+
+.fn-footer {
+
+    background: #0f1012;
+
+    border-top: 1px solid var(--fn-border);
+
+    padding: 40px 0 24px;
+
+    margin-top: auto;
+
+}
+
+
+
+.fn-footer-inner {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+
+}
+
+
+
+/* ==========================================================
+
+   GENERIC CONTAINERS & UTILITIES (DARK THEME)
+
+   ========================================================== */
+
+.container {
+
+    width: 100%;
+
+    max-width: var(--fn-container-max);
+
+    margin: 0 auto;
+
+    padding: 0 24px;
+
+}
+
+
+
+/* Cart & Checkout Dark Theme Overrides */
+
+.cart-layout {
+
+    display: grid;
+
+    grid-template-columns: 1fr 380px;
+
+    gap: 32px;
+
+    align-items: flex-start;
+
+}
+
+
+
+.cart-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+
+
+.cart-table th {
+
+    padding: 16px;
+
+    text-align: left;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+
+    color: var(--fn-text-muted);
+
+    border-bottom: 1px solid var(--fn-border);
+
+    background: var(--fn-bg-secondary);
+
+}
+
+
+
+.cart-table td {
+
+    padding: 16px;
+
+    vertical-align: middle;
+
+    border-bottom: 1px solid var(--fn-border);
+
+    background: var(--fn-surface);
+
+    color: #ffffff;
+
+}
+
+
+
+.cart-thumb {
+
+    width: 56px;
+
+    height: 56px;
+
+    object-fit: contain;
+
+    background: var(--fn-bg);
+
+    border: 1px solid var(--fn-border);
+
+    border-radius: var(--fn-radius-sm);
+
+    padding: 4px;
+
+}
+
+
+
+.cart-summary-card {
+
+    background: var(--fn-surface);
+
+    border: 1px solid var(--fn-border);
+
+    border-radius: var(--fn-radius-lg);
+
+    padding: 28px;
+
+    position: sticky;
+
+    top: calc(var(--fn-header-height) + 20px);
+
+}
+
+
+
+.summary-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 14px;
+
+    font-size: 13px;
+
+    color: var(--fn-text-body);
+
+}
+
+
+
+.summary-row.total {
+
+    padding-top: 16px;
+
+    border-top: 1px solid var(--fn-border);
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    color: #ffffff;
+
+}
+
+
+
+.summary-row.total span:last-child {
+
+    color: var(--fn-yellow);
+
+}
+
+
+
+.filter-input {
+
+    width: 100%;
+
+    padding: 10px 14px;
+
+    background: var(--fn-bg);
+
+    border: 1px solid var(--fn-border);
+
+    border-radius: var(--fn-radius-md);
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+}
+
+
+
+.filter-input:focus {
+
+    outline: none;
+
+    border-color: var(--fn-yellow);
+
+}
+
+
+
+.filter-label {
+
+    display: block;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.06em;
+
+    color: var(--fn-text-muted);
+
+    margin-bottom: 8px;
+
+}
+
+
+
+.btn-prime {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 12px 24px;
+
+    background: var(--fn-yellow);
+
+    color: #141518;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    text-transform: uppercase;
+
+    border-radius: var(--fn-radius-md);
+
+    border: none;
+
+    cursor: pointer;
+
+    transition: background 0.15s ease;
+
+}
+
+
+
+.btn-prime:hover {
+
+    background: var(--fn-yellow-hover);
+
+    color: #141518;
+
+}
+
+
+
+.btn-ghost {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 11px 22px;
+
+    background: var(--fn-surface);
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    border-radius: var(--fn-radius-md);
+
+    border: 1px solid var(--fn-border);
+
+    cursor: pointer;
+
+    transition: all 0.15s ease;
+
+}
+
+
+
+.btn-ghost:hover {
+
+    background: var(--fn-surface-hover);
+
+    border-color: #ffffff;
+
+}
+
+
+
+/* ==========================================================
+
+   RESPONSIVE ADJUSTMENTS
+
+   ========================================================== */
+
+@media (max-width: 991px) {
+
+    .cart-layout {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .cart-summary-card {
+
+        position: static;
+
+    }
+
+}
+
+
+
+@media (max-width: 768px) {
+
+    .fn-nav {
+
+        display: none;
+
+    }
+
+
+
+    .fn-cosmetics-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 12px;
+
+    }
+
+
+
+    .fn-modal-dialog {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+
+    .fn-modal-stage {
+
+        padding: 24px;
+
+    }
+
+
+
+    .fn-modal-stage img {
+
+        max-height: 200px;
+
+    }
+
+}
+
+
+/* Smart Standing Full-Body Pose Enhancements */
+.fn-3d-model.hero-standing {
+    max-height: 440px !important;
+    width: auto !important;
+    max-width: 90% !important;
+    filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 15px rgba(56, 189, 248, 0.3)) !important;
+}
+
+@media (max-width: 768px) {
+    .fn-3d-model.hero-standing {
+        max-height: 280px !important;
+    }
+}
+
+/* ==========================================================
+   DEDICATED FULL-BODY REAL 3D VIEWER MODAL (2-COLUMN SHOWCASE)
+   ========================================================== */
+.fn-real3d-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(6, 8, 14, 0.94);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s ease;
+}
+
+.fn-real3d-backdrop.show {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.fn-real3d-dialog {
+    width: 100%;
+    max-width: 1100px;
+    height: 85vh;
+    max-height: 760px;
+    background: #0b0e14;
+    border: 1.5px solid rgba(56, 189, 248, 0.35);
+    border-radius: var(--fn-radius-lg);
+    box-shadow: 0 0 50px rgba(2, 132, 199, 0.2), 0 30px 70px rgba(0, 0, 0, 0.95);
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    overflow: hidden;
+    position: relative;
+    animation: fnModalPopIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Left Column: Item Information, Striking Price Box & Fanpage CTA */
+.fn-real3d-sidebar {
+    background: linear-gradient(180deg, #10141d 0%, #0c0f17 100%);
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 26px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    position: relative;
+    z-index: 5;
+}
+
+.fn-real3d-badges {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.fn-real3d-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.fn-real3d-item-name {
+    font-size: 26px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 0.03em;
+    line-height: 1.15;
+    margin: 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.fn-real3d-item-sub {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--fn-cyan);
+}
+
+.fn-real3d-item-sub .sub-code {
+    color: #94a3b8;
+}
+
+.fn-real3d-mesh-stats {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    color: var(--fn-cyan);
+    background: rgba(0, 240, 255, 0.08);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    padding: 6px 12px;
+    border-radius: 6px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Right Column: Interactive 3D WebGL Canvas Stage */
+.fn-real3d-canvas-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    cursor: grab;
+    background: radial-gradient(circle at 50% 40%, #151c2c 0%, #0a0d14 70%, #05070a 100%);
+}
+
+.fn-real3d-canvas-wrap:active {
+    cursor: grabbing;
+}
+
+.fn-real3d-close-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 30;
+    background: rgba(15, 20, 30, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    line-height: 1;
+    color: #cbd5e1;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.fn-real3d-close-btn:hover {
+    background: #ef4444;
+    color: #ffffff;
+    border-color: #ef4444;
+    transform: scale(1.08);
+}
+
+.fn-real3d-hint {
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11.5px;
+    font-weight: 700;
+    color: #94a3b8;
+    background: rgba(10, 14, 22, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(6px);
+    padding: 6px 16px;
+    border-radius: 9999px;
+    pointer-events: none;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.fn-real3d-controls-hud {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(15, 18, 24, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 9999px;
+    padding: 6px 12px;
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.fn-hud-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 9999px;
+    color: #cbd5e1;
+    font-size: 11px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+}
+
+.fn-hud-btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.fn-hud-btn.active {
+    background: var(--fn-cyan);
+    color: #0b111e;
+    border-color: var(--fn-cyan);
+    font-weight: 900;
+    box-shadow: 0 0 16px rgba(0, 240, 255, 0.5);
+}
+
+@media (max-width: 900px) {
+    .fn-real3d-dialog {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        height: 92vh;
+        max-height: 92vh;
+    }
+    
+    .fn-real3d-sidebar {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 16px;
+        gap: 10px;
+        max-height: 250px;
+    }
+    
+    .fn-real3d-item-name {
+        font-size: 20px;
+    }
+    
+    .fn-real3d-canvas-wrap {
+        min-height: 350px;
+    }
+}
+
+/* Button in inspect stage to launch real 3D modal */
+.fn-stage-btn.btn-real-3d {
+    background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%);
+    color: #141518;
+    font-weight: 900;
+    border-color: #fde047;
+    box-shadow: 0 0 15px rgba(234, 179, 8, 0.45);
+}
+
+.fn-stage-btn.btn-real-3d:hover {
+    background: #facc15;
+    transform: translateY(-2px);
+    box-shadow: 0 0 22px rgba(234, 179, 8, 0.7);
+}
+
+/* ==========================================================
+   HIGH-CONTRAST STRIKING PRICE BOX (ปกติ 20 บาท / พิเศษ 15 บาท)
+   ========================================================== */
+.fn-price-showcase-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, rgba(250, 204, 21, 0.12) 0%, rgba(18, 22, 31, 0.95) 100%);
+    border: 1.5px solid rgba(250, 204, 21, 0.45);
+    border-radius: 12px;
+    padding: 10px 18px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    margin: 6px 0;
+    flex-wrap: wrap;
+    width: fit-content;
+}
+
+/* Special Price Wrap (พิเศษ 15 บาท) */
+.fn-price-special-wrap {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+}
+
+.fn-price-special-label {
+    font-size: 15px;
+    font-weight: 900;
+    color: #facc15;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.fn-price-special-amount {
+    font-size: 32px;
+    font-weight: 900;
+    color: #fbbf24;
+    text-shadow: 0 0 16px rgba(250, 204, 21, 0.65), 0 2px 4px rgba(0, 0, 0, 0.8);
+    letter-spacing: -0.02em;
+    line-height: 1;
+}
+
+.fn-price-special-currency {
+    font-size: 16px;
+    font-weight: 900;
+    color: #fde047;
+}
+
+/* Regular Price Wrap (ปกติ 20 บาท) */
+.fn-price-regular-wrap {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 4px;
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.fn-price-regular-text {
+    font-size: 15px;
+    font-weight: 800;
+    color: #cbd5e1;
+    text-decoration: line-through;
+    text-decoration-color: #f43f5e;
+    text-decoration-thickness: 2.5px;
+}
+
+/* Discount Pill */
+.fn-price-discount-badge {
+    background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 900;
+    padding: 4px 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(225, 29, 72, 0.45);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+/* Card Price Row Overrides */
+.fn-card-price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.fn-card-price {
+    font-size: 12px;
+    font-weight: 900;
+    color: #facc15;
+}
+
+.fn-card-price.special {
+    color: #fbbf24 !important;
+    font-size: 12px !important;
+    font-weight: 900 !important;
+    text-shadow: 0 0 8px rgba(250, 204, 21, 0.5);
+}
+
+.fn-card-old-price {
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    color: #cbd5e1 !important;
+    text-decoration: line-through !important;
+    text-decoration-color: #f43f5e !important;
+    text-decoration-thickness: 2px !important;
+}
+
